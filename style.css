@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(#107cff 0%, #107cff 50%,
+    #ffe414 50%, #ffe414 100%);
+}
+
+ul {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 50%;
+    background: url(/flowers/girl.png);
+    background-repeat: no-repeat;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+    color: #333;
+    font-size: 3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 5px 20px;
+    border-radius: 10px;
+    max-height: 150px;
+}
+
+ul:hover li {
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+
+ul li:hover {
+    color: #333;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.075);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: #f00;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.9s;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18vw;
+    -webkit-text-stroke: 0px rgb(0, 0, 0, 0.75);
+    letter-spacing: 100px;
+}
+
+ul li:hover::before {
+    content: attr(data-text);
+    opacity: 1;
+    letter-spacing: 10px;
+    
+}
+
+ul li:nth-child(1):before {
+    background: url(/flowers/music.jpg);
+}
+
+ul li:nth-child(2):before {
+    background: url(/flowers/film-appreciation-1024x683.jpg);
+}
+
+ul li:nth-child(3):before {
+    background: url(/flowers/book_stack.jpg);
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
